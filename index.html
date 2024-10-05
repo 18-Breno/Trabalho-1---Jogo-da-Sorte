@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Sorte</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            background-color: black;
+            color: aliceblue;
+        }
+        h1{
+            background-color: red;
+        }
+        .message{
+            margin-top: 16px;
+            font-size: 2.0em;
+        }
+        .btn-primary{
+            background-color: aliceblue;
+            color: black;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body class="text-center">
+    <h1>Jogo da Sorte</h1>
+    <div class="container mt-5">
+        <h2>Tente acertar o número correto ..... </h2>
+        <div class="row mt-4">
+            <div class="col">
+                <button class="btn-primary" onclick="checkButton(1)">1</button>
+            </div>
+            <div class="col">
+                <button class="btn-primary" onclick="checkButton(2)">2</button>
+            </div>
+            <div class="col">
+                <button class="btn-primary" onclick="checkButton(3)">3</button>
+            </div>
+            <div class="col">
+                <button class="btn-primary" onclick="checkButton(4)">4</button>
+            </div>
+            <div class="col">
+                <button class="btn-primary" onclick="checkButton(5)">5</button>
+            </div>
+        </div>
+        <br>
+        <div id="message" class="message"></div>
+    </div>
+
+    <script>
+        const correctButton = Math.floor(Math.random() * 5) + 1;
+
+        function checkButton(buttonNumber) {
+            const messageElement = document.getElementById('message');
+            if (buttonNumber === correctButton) {
+                messageElement.innerHTML ="Você acertou! Botão correto!";
+                messageElement.style.color = 'green';
+            } else {
+                messageElement.innerHTML =" Você errou! Botão incorreto!";
+                messageElement.style.color = 'red';
+            }
+        }
+    </script>
+
+</body>
+</html>
